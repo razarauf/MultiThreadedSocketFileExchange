@@ -197,12 +197,12 @@ int main(int argc, char *argv[])
             }
             else
                 printf("none\n");
-            memset(&arg2, 0, sizeof(arg2));
+            memset(arg2, 0, sizeof(*arg2));
         }
-        memset(&filename[0], 0, sizeof(filename));
-        memset(&tempPtr, 0, sizeof(tempPtr));
-        memset(&tmpPtr, 0, sizeof(tmpPtr));
-        memset(&arg1, 0, sizeof(arg1));
+        memset(filename, 0, sizeof(*filename));
+        memset(tempPtr, 0, sizeof(*tempPtr));
+        memset(tmpPtr, 0, sizeof(*tmpPtr));
+        memset(arg1, 0, sizeof(*arg1));
         
         close(s);
     }
