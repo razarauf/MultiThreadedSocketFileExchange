@@ -80,10 +80,14 @@ int main(int argc, char *argv[])
         
         char *tempPtr = fgets(filename, 200, stdin);
         
-        if(strcmp(filename, "exit\n")==0){
+        if(strcmp(filename, "exit\n")==0)
+        {
             close(s);
+            free (filename);
+            filename = NULL;
             return 0;
         }
+        
         printf("\ncommand entered: %s", filename);
         
         if (tempPtr != NULL)
@@ -184,6 +188,9 @@ int main(int argc, char *argv[])
                     printf("bytes sent: %d & file size: %lld\n", bytes_sent, fileStat.st_size);
                 }
                 printf("No error sending file?\n");
+                //Freeing dynamically allocated memory
+                free(data);
+                data = NULL;
             }
             else if(strcmp(arg1, "rmvfile")==0)
             {
