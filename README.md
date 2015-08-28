@@ -1,7 +1,9 @@
-# MultiThreadedSocketFileExchange
+# Multithreaded socket file exchange
 
-The c program implements a simple protocol for exchanging files and related information between a file server and a client.
+The implementation is used to exchange files between the server and the client.
 
-The server implements threads to serve multiple clients. The server also implements Forks for certain functions.
+The client connects with the server using a hostname and a port number and exchanges files with the server using an assigned socket.
+
+The server hosts on an available port number and listens to clients’ requests through an assigned socket. The server also implements pthread and forks, which allows the server to process multiple clients’ requests in parallel.
 
 Please note the program is not completely finished yet. 
